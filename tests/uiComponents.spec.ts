@@ -16,11 +16,9 @@ test.describe('Forms Layouts page', ()=>{
 
         //generic assertion 
         const inputValue = await usingTheGridEmailInput.inputValue();
-
         expect(inputValue).toEqual('test@test.com');
 
         //locator assertion
-
         await expect(usingTheGridEmailInput).toHaveValue('test@test.com');
     })
 })
