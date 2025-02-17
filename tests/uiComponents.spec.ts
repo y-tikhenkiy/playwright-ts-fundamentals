@@ -36,3 +36,19 @@ test.describe('Forms Layouts page', ()=>{
         expect(await usingTheGridForm.getByRole('radio', {name: 'Option 2'}).isChecked()).toBeTruthy();
     })
 })
+
+test('checkboxes', async({page}) =>{
+    await page.getByText('Modal & Overlays').click();
+    await page.getByText('Toastr').click();
+
+    await page.getByRole('checkbox', {name: 'Hide on click'}).click({force: true});
+    // await page.getByRole('checkbox', {name: 'Hide on click'}).check({force: true});
+    // await page.getByRole('checkbox', {name: 'Hide on click'}).uncheck({force: true});
+
+    const allBoxes = await page.getByRole('checkbox');
+
+    for(const box of await allBoxes.all()){
+        await box.check({force:true});
+        expect(await box.isChecked()).toBeTruthy();
+    } 
+})
