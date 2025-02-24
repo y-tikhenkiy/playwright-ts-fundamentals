@@ -43,7 +43,7 @@ export class DatepickerPage{
             calendarMonthAndYear = await this.page.locator('nb-calendar-view-mode').textContent();
         }
         
-        await this.page.locator('.day-cell.ng-star-inserted').getByText(expectedDate, {exact: true}).click(); // exact: true is for exact match
+        await this.page.locator('.day-cell.ng-star-inserted:not(.bounding-month)').getByText(expectedDate, {exact: true}).click(); // exact: true is for exact match
         return dateToAssert;
     }
 }

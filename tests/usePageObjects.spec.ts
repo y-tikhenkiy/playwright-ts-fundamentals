@@ -25,6 +25,6 @@ test('paramethrized methods', async({page})=>{
     await onFormLayoutsPage.submitUsingTheGridFormWithCredentialsAndSelectingOption('test@test.com','123123','Option 1');
     await onFormLayoutsPage.submitInlineFormWithNameEmailAndCheckbox('John Smith', 'jhon95@test.com', true);
     await navigateTo.datePickerPage();
-    await onDatePickerPage.selectCommonDatePickerDateFromToday(11);
-    await onDatePickerPage.selectDatePickerWithRangeFromToday(11, 18);
+    await onDatePickerPage.selectCommonDatePickerDateFromToday(7);
+    await onDatePickerPage.selectDatePickerWithRangeFromToday(7, 18);
 })
