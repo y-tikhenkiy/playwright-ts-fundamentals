@@ -1,17 +1,17 @@
 import { Page } from "@playwright/test";
+import { HelperBase } from "./helperBase";
 
-export class NavigatoinPage{
-
-    readonly page:Page
+export class NavigatoinPage extends HelperBase{
 
     constructor(page: Page){
-        this.page = page;
+        super(page);
     }
 
     async formLayoutsPage(){
 
         await this.selectGroupMenuItem('Forms');
         await this.page.getByText('Form Layouts').click();
+        await this.waitForNumberOfSeconds(10);
     }
 
     async datePickerPage(){
@@ -35,6 +35,7 @@ export class NavigatoinPage{
     }
 
     private async selectGroupMenuItem(groupItemTitle: string){
+        //this.page.waitForTimeout(5000);
         const groupMenuItem = this.page.getByTitle(groupItemTitle);
         const expandedState = await groupMenuItem.getAttribute('aria-expanded');
         if(expandedState=="false")

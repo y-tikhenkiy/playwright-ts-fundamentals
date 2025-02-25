@@ -16,6 +16,7 @@ test('navigate to forms page', async({page})=>{
     await pm.navigateTo().smartTablePage();
     await pm.navigateTo().toastrPage();
     await pm.navigateTo().tooltipPage();
+    
 })
 
 test('paramethrized methods', async({page})=>{
