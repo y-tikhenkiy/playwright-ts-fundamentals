@@ -1,7 +1,7 @@
 import {Page} from '@playwright/test';
-import{NavigatoinPage} from '../page-objects/navigationPage';
-import { FormLayoutsPage } from '../page-objects/formLayoutsPaga';
-import { DatepickerPage } from '../page-objects/datepickerPage';
+import { NavigatoinPage } from './navigationPage';
+import { FormLayoutsPage } from './formLayoutsPage';
+import { DatepickerPage } from './datepickerPage';
 
 export class PageManager{
     private readonly page: Page;

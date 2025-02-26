@@ -1,7 +1,7 @@
 import {test, expect} from '@playwright/test'
 import { PageManager } from '../page-objects/pageManager';
 import {NavigatoinPage} from '../page-objects/navigationPage'
-import { FormLayoutsPage } from '../page-objects/formLayoutsPaga';
+import { FormLayoutsPage } from '../page-objects/formLayoutsPage';
 import { DatepickerPage } from '../page-objects/datepickerPage';
 
 test.beforeEach(async({page})=>{
@@ -16,7 +16,7 @@ test('navigate to forms page', async({page})=>{
     await pm.navigateTo().smartTablePage();
     await pm.navigateTo().toastrPage();
     await pm.navigateTo().tooltipPage();
-    
+
 })
 
 test('paramethrized methods', async({page})=>{
